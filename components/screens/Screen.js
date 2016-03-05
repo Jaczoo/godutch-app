@@ -4,16 +4,30 @@ import {Button} from '../Button'
 import {Styles} from '../../Styles'
 
 export class Screen extends Component {
+  renderActionContainer () {
+    if (!this.props.mainAction) {
+      return null
+    } else {
+      return (
+        <View style={Styles.actionContainer}>
+          <Button label={this.props.mainAction.label} action={() => {this.props.nav.push({name: this.props.mainAction.target})}} />
+        </View>
+      )
+    }
+  }
+
   render () {
     return (
       <View style={Styles.screenContainer}>
         <View style={Styles.contentContainer}>
           {this.props.children}
         </View>
-        <View style={Styles.actionContainer}>
-          <Button label="MyButton" action={() => {this.props.nav.push({name: 'welcome'})}} />
-        </View>
+        {this.renderActionContainer()}
       </View>
     )
   }
+}
+
+Screen.defaultProps = {
+  mainAction: false
 }

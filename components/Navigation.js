@@ -11,10 +11,8 @@ var NavigationBarRouteMapper = {
     }
     var previousRoute = navState.routeStack[index - 1];
     return (
-      <TouchableOpacity
-        onPress={() => navigator.pop()}
-        style={Styles.navBarLeftButton}>
-        <Icon name="rocket" size={30} color="#900" />
+      <TouchableOpacity onPress={() => navigator.pop()}>
+        <Icon name="angle-left" style={[Styles.toolbarIcon, Styles.navBarLeft]} />
       </TouchableOpacity>
     );
   },
@@ -30,7 +28,7 @@ export class Navigation extends Component {
   render () {
     return (
       <Navigator
-        initialRoute={{name: 'splash', id: 0}}
+        initialRoute={{name: 'welcome', id: 1}}
         renderScene={this.renderScene}
         navigationBar={
           <Navigator.NavigationBar style={Styles.navBar} routeMapper={NavigationBarRouteMapper} />
@@ -43,13 +41,13 @@ export class Navigation extends Component {
     switch (route.name) {
       case 'splash':
         return (
-          <Screen nav={nav}>
+          <Screen nav={nav} mainAction={false}>
             <SplashScreen nav={nav} />
           </Screen>
         )
       case 'welcome':
         return (
-          <Screen nav={nav}>
+          <Screen nav={nav} mainAction={{label: 'Next: Choose your dates', target: 'welcome', active: false}}>
             <WelcomeScreen nav={nav} />
           </Screen>
         )

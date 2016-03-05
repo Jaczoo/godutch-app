@@ -4,9 +4,14 @@ import {StyleSheet} from 'react-native'
 const brandColor = '#D70F64'
 const backgroundColor = '#414141'
 const white = '#ffffff'
+const inputColor = '#cacaca'
 const fontFamily = 'OpenSans'
 const fontWeightRegular = '400'
 const fontWeightSemibold = '600'
+
+export const Colors = {
+  input: inputColor
+}
 
 export const Styles = StyleSheet.create({
   mainContainer: {
@@ -25,6 +30,14 @@ export const Styles = StyleSheet.create({
   navBar: {
     height: 60,
     paddingTop: 20,
+    paddingRight: 20,
+  },
+  navBarLeft: {
+    marginLeft: 20
+  },
+  toolbarIcon: {
+    color: brandColor,
+    fontSize: 30,
   },
   actionContainer: {
     paddingLeft: 20,
@@ -41,13 +54,15 @@ export const Styles = StyleSheet.create({
     color: '#f7f7f7',
     fontSize: 18,
     fontWeight: fontWeightRegular,
-    fontFamily: fontFamily
+    fontFamily: fontFamily,
+    textAlign: 'center',
   },
   secondaryText: {
     color: '#898989',
     fontSize: 12,
     fontWeight: fontWeightSemibold,
-    fontFamily: fontFamily
+    fontFamily: fontFamily,
+    textAlign: 'center',
   },
   buttonWrapper: {
     flex: 1,
@@ -64,7 +79,19 @@ export const Styles = StyleSheet.create({
     fontFamily: fontFamily,
     backgroundColor: brandColor
   },
-  navBarLeftButton: {
-
+  textInputWrapper: {
+    flex: 1,
+    flexDirection: 'row',
+    borderColor: inputColor,
+    borderBottomWidth: 1,
+    marginTop: 40,
+  },
+  textInput: {
+    height: 30,
+    flex: 1,
+    width: 300,
+    fontSize: 18,
+    color: inputColor,
+    textAlign: 'center',
   }
 })
