@@ -1,0 +1,3 @@
+rootProject.name = 'godutch'
+
+include ':app'
