@@ -81,7 +81,7 @@ export const Styles = StyleSheet.create({
   },
   textInputWrapper: {
     flex: 1,
-    flexDirection: 'row',
+    flexDirection: 'column',
     borderColor: inputColor,
     borderBottomWidth: 1,
     marginTop: 40,

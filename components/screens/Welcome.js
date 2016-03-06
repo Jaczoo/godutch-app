@@ -1,7 +1,7 @@
 'use strict'
 import React, {Component, View, Text, TextInput} from 'react-native'
 import {Styles} from '../../Styles'
-import {Input} from '../Input'
+import {Autosuggest} from '../Autosuggest'
 
 export class WelcomeScreen extends Component {
   constructor (props) {
@@ -18,7 +18,7 @@ export class WelcomeScreen extends Component {
         <Text style={Styles.secondaryText}>
           Find a vacation rental to share with your friends
         </Text>
-        <Input placeholder='Choose your destination' />
+        <Autosuggest placeholder='Choose your destination' />
       </View>
     )
   }
