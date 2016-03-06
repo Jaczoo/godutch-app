@@ -41,7 +41,6 @@ export class Autosuggest extends Component {
   }
 
   callAndSetState(text) {
-    console.log("call and set...")
     this.setState({text:text, suggestions: []})
     autosuggest(text).then((value) => {
       this.setState({suggestions: value })
