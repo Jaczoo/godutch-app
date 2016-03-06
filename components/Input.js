@@ -15,6 +15,7 @@ export class Input extends Component {
       <View style={Styles.textInputWrapper}>
         <TextInput
           style={Styles.textInput}
+          onPress={this.props.clickHandler}
           onChangeText={(text) => this.setState({text: text})}
           value={this.state.text}
           placeholder={this.props.placeholder}
@@ -25,6 +26,6 @@ export class Input extends Component {
   }
 }
 
-const styles = {
-
+Input.defaultProps = {
+  clickHandler: () => {return null}
 }

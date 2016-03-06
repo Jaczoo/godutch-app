@@ -22,6 +22,7 @@ export const Styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'space-between',
+    backgroundColor: backgroundColor,
   },
   contentContainer: {
     flex: 1,
@@ -97,5 +98,10 @@ export const Styles = StyleSheet.create({
   propertyImage: {
     height: 300,
     width: 300,
+  },
+  pickerValue: {
+    color: inputColor,
+    textAlign: 'center',
+    fontSize: 18,
   }
 })

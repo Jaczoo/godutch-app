@@ -1,6 +1,11 @@
 'use strict'
-import React, {Component, View, Text, Picker} from 'react-native'
+import React, {Component, View, Text} from 'react-native'
+import NewPicker from '../NewPicker'
 import {Styles} from '../../Styles'
+
+var options = [
+  '20', '50', '75', '100', '125', '150'
+]
 
 export class BudgetScreen extends Component {
   constructor (props) {
@@ -19,16 +24,12 @@ export class BudgetScreen extends Component {
         <Text style={Styles.secondaryText}>
           By setting this you wont't get results that exceed your budget
         </Text>
-        <Picker
-          selectedValue={this.state.budget}
-          onValueChange={(budget) => this.setState({budget: budget})}>
-          <Picker.Item label="20" value="20" />
-          <Picker.Item label="50" value="50" />
-          <Picker.Item label="75" value="75" />
-          <Picker.Item label="100" value="100" />
-          <Picker.Item label="125" value="125" />
-          <Picker.Item label="150" value="150" />
-        </Picker>
+        <Text style={Styles.pickerValue} onPress={()=>{this.refs.picker.show()}}>{this.state.budget}</Text>
+        <NewPicker ref={'picker'} options={options}
+          onSubmit={(option)=>{
+            this.setState({budget: option})
+          }}
+          />
       </View>
     )
   }
