@@ -93,5 +93,9 @@ export const Styles = StyleSheet.create({
     fontSize: 18,
     color: inputColor,
     textAlign: 'center',
+  },
+  propertyImage: {
+    height: 300,
+    width: 300,
   }
 })

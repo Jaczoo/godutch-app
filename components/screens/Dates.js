@@ -1,9 +1,9 @@
 'use strict'
 import React, {Component, View, Text} from 'react-native'
 import {Styles} from '../../Styles'
-import {Autosuggest} from '../Autosuggest'
+import {Datepicker} from '../Datepicker'
 
-export class WelcomeScreen extends Component {
+export class DatesScreen extends Component {
   constructor (props) {
     super(props)
     this.state = {}
@@ -13,12 +13,12 @@ export class WelcomeScreen extends Component {
     return (
       <View>
         <Text style={Styles.headline}>
-          Where do you want to go Dutch?
+          When do you want to go Dutch?
         </Text>
         <Text style={Styles.secondaryText}>
           Find a vacation rental to share with your friends
         </Text>
-        <Autosuggest placeholder='Choose your destination' />
+        <Datepicker />
       </View>
     )
   }

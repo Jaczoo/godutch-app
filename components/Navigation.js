@@ -1,7 +1,7 @@
 'use strict'
 import React, {Component, Navigator, TouchableOpacity, Text} from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
-import {Screen, WelcomeScreen, SplashScreen} from './screens/'
+import {Screen, WelcomeScreen, SplashScreen, DatesScreen, DetailScreen} from './screens/'
 import {Styles} from '../Styles'
 
 var NavigationBarRouteMapper = {
@@ -47,8 +47,20 @@ export class Navigation extends Component {
         )
       case 'welcome':
         return (
-          <Screen nav={nav} mainAction={{label: 'Next: Choose your dates', target: 'welcome', active: false}}>
+          <Screen nav={nav} mainAction={{label: 'Next: Choose your dates', target: 'detail', active: false}}>
             <WelcomeScreen nav={nav} />
+          </Screen>
+        )
+      case 'dates':
+        return (
+          <Screen nav={nav} mainAction={{label: 'Next: Choose your dates', target: 'detail', active: false}}>
+            <DatesScreen nav={nav} />
+          </Screen>
+        )
+      case 'detail':
+        return (
+          <Screen nav={nav} mainAction={{label: 'Blah', target: 'welcome', active: false}}>
+            <DetailScreen nav={nav} />
           </Screen>
         )
       default:
