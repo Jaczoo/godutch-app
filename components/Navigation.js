@@ -1,7 +1,7 @@
 'use strict'
 import React, {Component, Navigator, TouchableOpacity, Text} from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
-import {Screen, WelcomeScreen, SplashScreen, DatesScreen, DetailScreen} from './screens/'
+import {Screen, WelcomeScreen, SplashScreen, DatesScreen, DetailScreen, PeopleAmountScreen, BudgetScreen} from './screens/'
 import {Styles} from '../Styles'
 
 var NavigationBarRouteMapper = {
@@ -47,14 +47,26 @@ export class Navigation extends Component {
         )
       case 'welcome':
         return (
-          <Screen nav={nav} mainAction={{label: 'Next: Choose your dates', target: 'detail', active: false}}>
+          <Screen nav={nav} mainAction={{label: 'Next: Choose your dates', target: 'dates', active: false}}>
             <WelcomeScreen nav={nav} />
           </Screen>
         )
       case 'dates':
         return (
-          <Screen nav={nav} mainAction={{label: 'Next: Choose your dates', target: 'detail', active: false}}>
+          <Screen nav={nav} mainAction={{label: 'Next: How many people', target: 'peopleAmount', active: false}}>
             <DatesScreen nav={nav} />
+          </Screen>
+        )
+      case 'peopleAmount':
+        return (
+          <Screen nav={nav} mainAction={{label: 'Next: Budget per Person', target: 'budget', active: false}}>
+            <PeopleAmountScreen nav={nav} />
+          </Screen>
+        )
+      case 'budget':
+        return (
+          <Screen nav={nav} mainAction={{label: 'Next: Search for rentals', target: 'detail', active: false}}>
+            <BudgetScreen nav={nav} />
           </Screen>
         )
       case 'detail':
