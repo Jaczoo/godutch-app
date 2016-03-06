@@ -1,3 +1,5 @@
 export * from './Screen'
 export * from './Welcome'
 export * from './Splash'
+export * from './Dates'
+export * from './Detail'
